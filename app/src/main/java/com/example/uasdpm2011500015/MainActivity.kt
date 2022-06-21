@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         refresh()
         btnTambah.setOnClickListener{
-            val i = Intent(this@MainActivity, MengentryDataDosen::class.java)
+            val i = Intent(this@MainActivity, EntryDataDosen ::class.java)
             startActivity(i)
         }
     }

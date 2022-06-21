@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
-class MengentryDataDosen : AppCompatActivity () {
+class EntryDataDosen : AppCompatActivity () {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_entry_dosen)
@@ -31,12 +31,12 @@ class MengentryDataDosen : AppCompatActivity () {
             "IV/d - Pembina Utama Madya", "IV/e - Pembina Utama")
 
         val adpjabatan = ArrayAdapter(
-            this@MengentryDataDosen,
+            this@EntryDataDosen ,
             android.R.layout.simple_spinner_dropdown_item,
             Jabatan
         )
         val adpGolongan = ArrayAdapter(
-            this@MengentryDataDosen,
+            this@EntryDataDosen ,
             android.R.layout.simple_spinner_dropdown_item,
             Golongan
         )
@@ -66,7 +66,7 @@ class MengentryDataDosen : AppCompatActivity () {
             if ("${etNIDN.text}".isNotEmpty() && "${etNmDosen.text}".isNotEmpty()&&
                 (rdS2.isChecked || rdS3.isChecked) && "${etBidang.text}".isNotEmpty()
                 && "${etProgram.text}".isNotEmpty()) {
-                val db = Campuss(this@MengentryDataDosen)
+                val db = Campuss(this@EntryDataDosen )
                 db.NIDN = "${etNIDN.text}"
                 db.NmDosen = "${etNmDosen.text}"
                 db.Jabatan = spnjabatan.selectedItem as String
@@ -76,20 +76,20 @@ class MengentryDataDosen : AppCompatActivity () {
                 db.Program_studi = "${etProgram.text}"
                 if (if (!modeEdit) db.simpan() else db.ubah("${etNIDN.text}")) {
                     Toast.makeText(
-                        this@MengentryDataDosen,
+                        this@EntryDataDosen ,
                         "Data Dosen Berhasil Disimpan",
                         Toast.LENGTH_SHORT
                     ).show()
                     finish()
                 } else
                     Toast.makeText(
-                        this@MengentryDataDosen,
+                        this@EntryDataDosen ,
                         "Data Dosen Gagal Disimpan",
                         Toast.LENGTH_SHORT
                     ).show()
             } else
                 Toast.makeText(
-                    this@MengentryDataDosen,
+                    this@EntryDataDosen ,
                     "Data Dosen Belum Lengkap",
                     Toast.LENGTH_SHORT
                 ).show()

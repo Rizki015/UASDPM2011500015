@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UASDPM2011500015">
         <activity
-            android:name=".MengentryDataDosen"
+            android:name=".EntryDataDosen"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

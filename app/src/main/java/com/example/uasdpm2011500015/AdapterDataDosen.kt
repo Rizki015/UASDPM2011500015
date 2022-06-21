@@ -40,7 +40,7 @@ class AdapterDataDosen(
         holder.tvProgramStudi!!.setText(listItem.ProgramStudi)
 
         holder.btnEdit!!.setOnClickListener {
-            val i = Intent(context, MengentryDataDosen::class.java)
+            val i = Intent(context, EntryDataDosen::class.java)
             i.putExtra("kode", listItem.NIDN)
             i.putExtra("nama", listItem.NmDosen)
             i.putExtra("jabatan", listItem.Jabatan)
